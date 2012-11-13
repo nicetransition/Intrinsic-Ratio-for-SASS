@@ -1,11 +1,10 @@
 .intrinsicContainer {
 	/*		
-		The concept: he idea is to create a box with the proper ratio (4:3, 16:9, etc.), 
-		then make the video inside that box stretch to fit the dimensions of the box. It's that simple.
+		The concept is to create a box with the proper ratio (4:3, 16:9, etc.), then make the video inside that box stretch to fit the dimensions of the box. It's that simple.
 		Documentation: http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
 
-		Need to define width within another class on the element,
-		if not a defaultly inherited (ie: <div/> or any class with a display: block or default width of auto or 100%)
+		You just need to define width within another class on the element,
+		if not a inherited by default (ie: <div/> or any class with a display: block or default width of auto or 100%)
 	*/	
 	> .intrinsicWrapper {
 		/*
