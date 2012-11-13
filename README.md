@@ -11,5 +11,8 @@ Even though assets>less>styles.less and assets>less>styles.scss are two files, t
 Please note: Code in "demo.css" is purely for the demo file only and does not contain relevant code.
 
 
+DEMO AVAILABLE: http://nicetransition.com/demos/IntrinsicRatios
+
+
 Created by Kevin Mack
 November 13, 2012
