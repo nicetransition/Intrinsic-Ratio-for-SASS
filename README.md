@@ -1,18 +1,22 @@
-Intrinsic-Ratio-for-LESS-and-SASS
+Intrinsic Ratio for LESS or Sass
 =================================
 
-A reusable class to be used in a dynamic stylesheet language (LESS or SASS). 
+A reusable helper-class to be used in a LESS or Sass project. Works in your browser of choice, including old IEs.
 
-Code is heavily commented to help you understand.
-
-Even though assets>less>styles.less and assets>less>styles.scss are two files, they use the exact same code. 
+----
 
 
-Please note: Code in "demo.css" is purely for the demo file only and does not contain relevant code.
+## How To Use
 
+```
 
-DEMO AVAILABLE: http://nicetransition.com/demos/IntrinsicRatios
+	<div class="intrinsic">
+		<div class="intrinsic__wrapper">
+			<div class="intrinsic__wrapper__element">
+				Just apply a `padding-bottom` based on your aspect ratio ( example: 4:3 = 75% )
+				on  `intrinsic__wrapper__element` and this will keep an aspect ratio
+			</div>
+		</div>
+	</div>
 
-
-Created by Kevin Mack
-November 13, 2012
+```

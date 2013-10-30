@@ -1,81 +1,40 @@
-.intrinsicContainer {
-	/*		
+.intrinsic {
+	/*
 		The concept is to create a box with the proper ratio (4:3, 16:9, etc.), then make the video inside that box stretch to fit the dimensions of the box. It's that simple.
 		Documentation: http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
 
 		You just need to define width within another class on the element,
 		if not a inherited by default (ie: <div/> or any class with a display: block or default width of auto or 100%)
-	*/	
-	> .intrinsicWrapper {
+	 */
+
+	> .intrinsic__wrapper {
 		/*
 			This element must maintain position: relative.
 			The padding-bottom creates the proper ratio.
-			Examples: 
+			Examples:
 					4:3 = padding-bottom: 75%;
 					16:9 = padding-bottom: 56.25%;
-					(does not necessarily have to be "common ratios", 
+					(does not necessarily have to be "common ratios",
 					it can be based off image dimensions of the design)
-		*/		
+		 */
 		height: 0;
-		/*padding-bottom: 75%; // if this is a global class, you do not want to define this property. Do it in another class, see .ratio4x3 */
+		/*padding-bottom: 75%; // if this is a global class, you do not want to define this property. Do it in another class, example .ratio--4x3 */
 		position: relative;
 
-		> .intrinsicElement {
+		> .intrinsic__wrapper__element {
 		   /*
 			   This class needs no further customization,
-			   if this class is applied to the elemtent and is contained 
-			   within .intrinsicContainer > .intrinsicWrapper > *current element*
+			   if this class is applied to the elemtent and is contained
+			   within .intrinsic > .intrinsic__wrapper > *current element*
 			   the element should scale in correct perspective
-		   */
-			left: 0;
-			position: absolute;
+		    */
 			top: 0;
+			left: 0;
 			width: 100%;
 			height: 100%;
+			position: absolute;
 		}
 
 	}
 }
-
-
-/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-|///////////////////////////// DEMO /////////////////////////////|
-||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
-	#example1, #example2 {
-		background: rgba(208,227,61,.5);
-		border: 1px solid rgb(208,227,61);
-		margin-top: 20px;
-	}
-	#example1 {
-		max-width: 300px;
-	}
-	#example2 {
-		max-width: 600px;
-	}
-	#example3 {
-		max-width: 320px;
-		> .intrinsicWrapper {
-			padding-bottom: 67.1875%;
-			> .intrinsicElement {
-				background: url('http://placekitten.com/320/215') no-repeat;
-				background-size: 100%; -moz-background-size: 100%; -webkit-background-size: 100%;
-			}
-		}
-	}
-
-
-	/*
-		DEFINE NEEDED RATIOS
-			Examples: 
-				4x3 = padding-bottom: 75%; (3 divided by 4, times 100, and add a percent character)
-				16x9 = padding-bottom: 56.25%; [(9/16)*100 +"%"]
-	*/
-
-		.ratio4x3 {
-			padding-bottom: 75%;
-		}
-		.ratio16x9 {
-			padding-bottom: 56.25%;
-		}
-
 
