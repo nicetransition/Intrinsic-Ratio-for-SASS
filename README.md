@@ -1,7 +1,7 @@
-Intrinsic Ratio for LESS or Sass
+Intrinsic Ratio for Sass
 =================================
 
-A reusable helper-class to be used in a LESS or Sass project. Works in your browser of choice, including old IEs.
+A reusable helper-class to be used in your next project.
 
 ----
 

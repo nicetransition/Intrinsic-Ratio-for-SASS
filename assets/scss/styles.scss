@@ -6,35 +6,58 @@
 		You just need to define width within another class on the element,
 		if not a inherited by default (ie: <div/> or any class with a display: block or default width of auto or 100%)
 	 */
-
-	> .intrinsic__wrapper {
-		/*
-			This element must maintain position: relative.
-			The padding-bottom creates the proper ratio.
-			Examples:
-					4:3 = padding-bottom: 75%;
-					16:9 = padding-bottom: 56.25%;
-					(does not necessarily have to be "common ratios",
-					it can be based off image dimensions of the design)
-		 */
-		height: 0;
-		/*padding-bottom: 75%; // if this is a global class, you do not want to define this property. Do it in another class, example .ratio--4x3 */
-		position: relative;
-
-		> .intrinsic__wrapper__element {
-		   /*
-			   This class needs no further customization,
-			   if this class is applied to the elemtent and is contained
-			   within .intrinsic > .intrinsic__wrapper > *current element*
-			   the element should scale in correct perspective
-		    */
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			position: absolute;
-		}
-
-	}
 }
+
+.intrinsic__wrapper {
+	/*
+		This element must maintain position: relative.
+		The padding-bottom creates the proper ratio.
+		Examples:
+				4:3 = padding-bottom: 75%;
+				16:9 = padding-bottom: 56.25%;
+				(does not necessarily have to be "common ratios",
+				it can be based off image dimensions of the design)
+	 */
+
+	height: 0;
+	/*padding-bottom: 75%; // if this is a global class, you do not want to define this property. Do it in another class, example .ratio--4x3 */
+	position: relative;
+
+}
+
+.intrinsic__wrapper__element {
+   /*
+	   This class needs no further customization,
+	   if this class is applied to the elemtent and is contained
+	   within .intrinsic > .intrinsic__wrapper > *current element*
+	   the element should scale in correct perspective
+    */
+
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+/**
+ * Ratios
+ * Include ratios on `.intrinsic__wrapper` class
+ */
+@mixin generateRatios($width, $height, $prefix: "ratio--") {
+
+	$class-name: $prefix + $width + "x" + $height;
+
+	.#{$class-name} {
+		padding-bottom: percentage( $height / $width);
+	}
+	// Output example: .ratio--16x9 {}
+}
+
+/**
+ * Example Ratios
+ */
+
+@include generateRatios(16,9);
+@include generateRatios(4,3);
 
